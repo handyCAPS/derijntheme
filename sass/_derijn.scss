@@ -1,0 +1,185 @@
+* {
+	box-sizing: content-box;
+}
+
+body {
+	background: url('../images/diagonales_decalees.png'), $grey;
+	color: lighten($primary-color, 16);
+	text-rendering: optimizeLegibility;
+	font-family: $bodyFont;
+	font-size: 16px;
+	line-height: 1.16;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $headerFont;
+}
+
+h1, h2, h3 {
+	text-shadow: 1.2px 1.2px 0px $white;
+	color: $darkBlue;
+}
+
+h1 {
+	text-shadow: 0.2px 2px 0px $white;
+}
+
+a {
+	color: $white;
+	transition: color 0.3s ease-out;
+		&:hover {
+			color: darken($white, 26);
+		}
+}
+
+.row {
+	max-width: 72em;
+}
+
+header {
+	padding: $step2 + em;
+	width: 100%;
+		h1 {
+			max-width: 50%;
+			margin-top: $step2 + rem;
+				img {
+					width: 100%;
+				}
+		}
+		nav {
+			min-width: 50%;
+			margin: 0 auto;
+			overflow: hidden;
+				ul {
+					overflow: hidden;
+					list-style: none;
+					margin: 0;
+					padding: 0;
+					float: right;
+					border-bottom: 2px solid $darkBlue;
+						li {
+							float: left;
+							margin: 0 0 0 $step3 + em;
+							padding: 0 $step-2 + em;
+							// background-color: $darkBlue;
+							// border-radius: 3px;
+								a {
+									text-decoration: none;
+									color: $darkBlue;
+								}
+
+						}
+				}
+		}
+}
+
+#contentWrap, #pageFooter {
+	padding: 0 13px;
+}
+
+
+#sideBarWrap {
+	overflow: hidden;
+	margin-bottom: $step1 + rem;
+		ul {
+			list-style: none;
+			float: right;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			width: 100%;
+				li {
+					background-color: $darkBlue;
+					text-align: right;
+					font-size: $step2 + em;
+					padding: $step-3 + em $step-2 + em;
+					margin: $step-1 + em 0 0;
+					border-radius: 3px 0px 0px 3px;
+					min-width: 50%;
+						&:first-of-type {
+							margin-top: 0;
+						}
+						a {
+							display: block;
+							width: 100%;
+						}
+						table {
+							width: 100%;
+							margin-bottom: $step-1 + rem;
+						}
+						table td {
+							font-size: $step1 + rem;
+							text-align: left;
+						}
+						img {
+							width: 90%;
+							margin: $step1 + rem;
+						}
+				}
+		}
+
+}
+
+.image_wrap img {
+	width: 100%;
+}
+
+#attSliderWrapper {
+	margin-top: $step2 + em;
+	float: right;
+	width: 66%;
+	background-color: $darkBlue;
+	border-radius: 0 3px 3px;
+	position: relative;
+		div.image_wrap {
+			width: 25%;
+			float: left;
+			display: inline;
+			margin: 0 $step1 + rem $step-1 + rem 0;
+			position: relative;
+		}
+		h2 {
+			margin-bottom: 0;
+			color: $white;
+			text-shadow: 1.6px 2.2px 0px $black;
+			position: relative;
+		}
+}
+
+article {
+	background-color: $darkBlue;
+	padding: $step1 + rem $step1 + rem $step-1 + rem;
+	color: $white;
+	border-radius: 3px;
+	overflow: hidden;
+		h2 {
+			background-color: $lightBlue;
+			position: relative;
+			left: -($step1) + rem;
+			display: inline-block;
+			padding: $step-3 + rem $step-1 + rem;
+		}
+		p {
+			background-color: $lightGrey;
+			color: $black;
+			padding: $step-2 + rem $step-1 + rem;
+			border-radius: 3px;
+		}
+}
+
+.owl-carousel {
+	padding-top: 0;
+}
+
+#welcome {
+	margin: $step1 + rem 0;
+		h2 {
+			margin-top: 0;
+		}
+}
+
+#pageFooter {
+		article {
+			border-radius: 0;
+		}
+}
