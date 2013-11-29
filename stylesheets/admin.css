@@ -1,0 +1,11 @@
+/* line 1, ../sass/admin.scss */
+#menu-posts-slidepost .wp-menu-image {
+  position: relative;
+  left: -6.5px;
+  top: -6.5px;
+  width: 16px;
+}
+/* line 6, ../sass/admin.scss */
+#menu-posts-slidepost .wp-menu-image img {
+  width: 100%;
+}

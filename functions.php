@@ -23,6 +23,14 @@ function derijn_register_scripts() {
 
 add_action('wp_enqueue_scripts', 'derijn_register_scripts' );
 
+// Now adding admin side styles
+
+function derijn_admin_styles() {
+	wp_register_style('derijn_admin', THEMEPATH . '/stylesheets/admin.css', false, false );
+	wp_enqueue_style('derijn_admin');
+}
+add_action('admin_enqueue_scripts', 'derijn_admin_styles' );
+
 // Register Custom Post Type
 function derijn_custom_post_type() {
 
@@ -54,7 +62,7 @@ function derijn_custom_post_type() {
 		'show_in_nav_menus'   => true,
 		'show_in_admin_bar'   => true,
 		'menu_position'       => 5,
-		'menu_icon'           => '',
+		'menu_icon'           => THEMEPATH . '/images/slider-icon.png',
 		'can_export'          => true,
 		'has_archive'         => true,
 		'exclude_from_search' => false,
@@ -68,4 +76,41 @@ function derijn_custom_post_type() {
 // Hook into the 'init' action
 add_action( 'init', 'derijn_custom_post_type', 0 );
 
+// Featured images available for post, pages, and slideposts
 add_theme_support('post-thumbnails',array('post', 'page', 'slidepost'));
+
+// Register Navigation Menus
+function derijn_navigation_menus() {
+
+	$locations = array(
+		'header_menu' => __( 'Custom Header Menu', 'derijnkapper' ),
+		'footer_menu' => __( 'Custom Footer Menu', 'derijnkapper' ),
+		'mobile_footer' => __( 'Footer Menu on mobile devices', 'derijnkapper' ),
+	);
+	register_nav_menus( $locations );
+
+}
+
+// Hook into the 'init' action
+add_action( 'init', 'derijn_navigation_menus' );
+
+function derijn_sidebar() {
+	   /**
+		* Creates a sidebar
+		* @param string|array  Builds Sidebar based off of 'name' and 'id' values.
+		*/
+		$args = array(
+			'name'          => __( 'Sidebar', 'theme_text_domain' ),
+			'id'            => 'sidebar1',
+			'description'   => '',
+			'class'         => '',
+			'before_widget' => '<li id="%1" class="widget %2">',
+			'after_widget'  => '</li>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>'
+		);
+
+		register_sidebar( $args );
+}
+
+add_action('widgets_init', 'derijn_sidebar' );
