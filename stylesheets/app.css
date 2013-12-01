@@ -7472,6 +7472,11 @@ header nav ul li a {
 }
 
 /* line 127, ../sass/_derijn.scss */
+#sliderWrap {
+  margin-bottom: 1rem;
+}
+
+/* line 131, ../sass/_derijn.scss */
 #attSliderWrapper {
   margin-top: 1.618em;
   float: right;
@@ -7480,7 +7485,7 @@ header nav ul li a {
   border-radius: 0 3px 3px;
   position: relative;
 }
-/* line 134, ../sass/_derijn.scss */
+/* line 138, ../sass/_derijn.scss */
 #attSliderWrapper div.image_wrap {
   width: 25%;
   float: left;
@@ -7488,7 +7493,7 @@ header nav ul li a {
   margin: 0 1rem 0.61805rem 0;
   position: relative;
 }
-/* line 141, ../sass/_derijn.scss */
+/* line 145, ../sass/_derijn.scss */
 #attSliderWrapper h2 {
   margin-bottom: 0;
   color: #f9f9f9;
@@ -7496,7 +7501,7 @@ header nav ul li a {
   position: relative;
 }
 
-/* line 149, ../sass/_derijn.scss */
+/* line 153, ../sass/_derijn.scss */
 article {
   background-color: #263a55;
   padding: 1rem 1rem 0.61805rem;
@@ -7504,7 +7509,7 @@ article {
   border-radius: 3px;
   overflow: hidden;
 }
-/* line 155, ../sass/_derijn.scss */
+/* line 159, ../sass/_derijn.scss */
 article h2 {
   background-color: #c5d2d7;
   position: relative;
@@ -7512,35 +7517,35 @@ article h2 {
   display: inline-block;
   padding: 0.23608rem 0.61805rem;
 }
-/* line 162, ../sass/_derijn.scss */
+/* line 166, ../sass/_derijn.scss */
 article p {
   background-color: #f3f3f3;
   color: #1f2921;
   padding: 0.38198rem 0.61805rem;
   border-radius: 3px;
 }
-/* line 167, ../sass/_derijn.scss */
+/* line 171, ../sass/_derijn.scss */
 article p a {
   color: #281451;
   text-decoration: underline;
   text-decoration-style: dotted;
 }
 
-/* line 175, ../sass/_derijn.scss */
+/* line 179, ../sass/_derijn.scss */
 .owl-carousel {
   padding-top: 0;
 }
 
-/* line 179, ../sass/_derijn.scss */
+/* line 183, ../sass/_derijn.scss */
 #welcome {
-  margin: 1rem 0;
+  margin: 0 0 1rem;
 }
-/* line 181, ../sass/_derijn.scss */
+/* line 185, ../sass/_derijn.scss */
 #welcome h2 {
   margin-top: 0;
 }
 
-/* line 187, ../sass/_derijn.scss */
+/* line 191, ../sass/_derijn.scss */
 #pageFooter article {
   border-radius: 0;
 }

@@ -1,3 +1,5 @@
 wordpress/
 .sass-cache/
 config.rb
+*.html
+*.zip
