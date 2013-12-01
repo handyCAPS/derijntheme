@@ -104,7 +104,7 @@ function derijn_sidebar() {
 			'id'            => 'sidebar1',
 			'description'   => '',
 			'class'         => '',
-			'before_widget' => '<li id="%1" class="widget %2">',
+			'before_widget' => '<li class="widget_item">',
 			'after_widget'  => '</li>',
 			'before_title'  => '<h2 class="widgettitle">',
 			'after_title'   => '</h2>'
