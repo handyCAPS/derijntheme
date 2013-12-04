@@ -1,5 +1,5 @@
 * {
-	box-sizing: content-box;
+	box-sizing: border-box;
 }
 
 body {
@@ -28,19 +28,60 @@ a {
 	color: $lightBlue;
 	transition: color 0.3s ease-out;
 		&:hover {
-			color: darken($white, 26);
+			color: saturate($lightBlue, 20);
 		}
 }
+
+table a {
+	color: $darkBlue;
+}
+
+article {
+	background-color: $darkBlue;
+	padding: $step1 + rem $step1 + rem $step-1 + rem;
+	color: $white;
+	@include boradius;
+	@include bottomshadow;
+	overflow: hidden;
+		h1, h2, h3, h4 {
+			background-color: $lightBlue;
+			position: relative;
+			left: -($step1) + rem;
+			display: inline-block;
+			padding: $step-3 + rem $step-1 + rem;
+			clear: both;
+		}
+		h3 {
+			display: block;
+		}
+		p {
+			background-color: $lightGrey;
+			color: $black;
+			padding: $step-2 + rem $step-1 + rem;
+			@include boradius;
+				a {
+					color: $darkPurple;
+					text-decoration: underline;
+					text-decoration-style: dotted;
+				}
+		}
+}
+
 
 .row {
 	max-width: 72em;
 }
 
+#outerWrap {
+	overflow: hidden;
+	padding: 0 $step1 + rem $step2 + rem;
+}
+
 header {
 	padding: $step2 + em;
 	width: 100%;
-		h1 {
-			max-width: 50%;
+		#logo {
+			// max-width: 50%;
 			margin-top: $step2 + rem;
 				img {
 					width: 100%;
@@ -61,31 +102,81 @@ header {
 							float: left;
 							margin: 0 0 0 $step3 + em;
 							padding: 0 $step-2 + em;
-							// background-color: $darkBlue;
-							// border-radius: 3px;
+							max-width: 10em;
+								ul {
+									display: none;
+								}
+								// &:hover{
+								// 	background-color: $darkBlue;
+								// 	 ul {
+								// 		display: block;
+								// 		position: relative;
+								// 		float: none;
+								// 		padding: 0;
+								// 			li {
+								// 				float: none;
+								// 				margin: 0;
+								// 			}
+								// 		}
+								// 	}
 								a {
 									text-decoration: none;
 									color: $darkBlue;
 								}
-
+								&.current-menu-item a {
+									color: $lightBlue;
+								}
 						}
 				}
 		}
 }
 
-#contentWrap, #pageFooter {
-	padding: 0 13px;
+#attSliderWrapper {
+	left: 11.6px;
+	margin-top: $step2 + em;
+	float: right;
+	width: 66%;
+	background-color: $darkBlue;
+	@include boradius;
+	@include bottomshadow;
+		article {
+			@include noshadow;
+		}
+		div.image_wrap {
+			width: 25%;
+			float: left;
+			display: inline;
+			margin: 0 $step1 + rem $step-1 + rem 0;
+			position: relative;
+		}
+		h2 {
+			margin-bottom: 0;
+			color: $white;
+			text-shadow: 1.6px 2.2px 0px $black;
+			position: relative;
+		}
 }
 
+#contentWrap, #pageFooter {
+	// padding: 0 13px;
+}
+
+#contentWrap {
+		article {
+			margin-bottom: $step2 + rem;
+		}
+}
 
 #sideBarWrap {
 	overflow: hidden;
 	margin-bottom: $step1 + rem;
+	// padding-right: 0;
 		ul {
 			list-style: none;
 			float: right;
 			margin: 0;
 			padding: 0;
+			padding-bottom: 20px;
 			overflow: hidden;
 			width: 100%;
 				li {
@@ -94,14 +185,26 @@ header {
 					font-size: $step2 + em;
 					padding: $step-3 + em $step-2 + em;
 					margin: $step-1 + em 0 0;
-					border-radius: 3px 0px 0px 3px;
 					min-width: 50%;
+					transition: all 0.6s ease-out 0.2s;
+					@include boradius;
+					@include bottomshadow;
+						&:hover a, {
+							padding-right: $step3 + em;
+							// text-align: left;
+							color: lighten($lightBlue, 20);
+						}
 						&:first-of-type {
 							margin-top: 0;
 						}
 						a {
 							display: block;
 							width: 100%;
+							text-align: right;
+							transition: all 0.6s ease-out 0.2s;
+						}
+						a.current_sidebar_link {
+							text-align: left;
 						}
 						table {
 							width: 100%;
@@ -126,54 +229,36 @@ header {
 
 #sliderWrap {
 	margin-bottom: $step1 + rem;
-}
-
-#attSliderWrapper {
-	margin-top: $step2 + em;
-	float: right;
-	width: 66%;
-	background-color: $darkBlue;
-	border-radius: 0 3px 3px;
-	position: relative;
-		div.image_wrap {
-			width: 25%;
-			float: left;
-			display: inline;
-			margin: 0 $step1 + rem $step-1 + rem 0;
-			position: relative;
+	height: 592px;
+		article {
+			background-color: rgba(38, 58, 85, 0.76);
 		}
-		h2 {
-			margin-bottom: 0;
+		h2,h3 {
+			position: none;
+			text-shadow: none;
 			color: $white;
-			text-shadow: 1.6px 2.2px 0px $black;
-			position: relative;
-		}
-}
-
-article {
-	background-color: $darkBlue;
-	padding: $step1 + rem $step1 + rem $step-1 + rem;
-	color: $white;
-	border-radius: 3px;
-	overflow: hidden;
-		h2 {
-			background-color: $lightBlue;
-			position: relative;
-			left: -($step1) + rem;
-			display: inline-block;
-			padding: $step-3 + rem $step-1 + rem;
+			background-color: transparent;
+			padding-left: $step-1 + rem;
 		}
 		p {
-			background-color: $lightGrey;
-			color: $black;
-			padding: $step-2 + rem $step-1 + rem;
-			border-radius: 3px;
-				a {
-					color: $darkPurple;
-					text-decoration: underline;
-					text-decoration-style: dotted;
-				}
+			background-color: transparent;
+			color: $white;
+			text-shadow: 0.3px 0.6px 0.3px $black;
+			padding: 0;
 		}
+		a {
+			color: saturate($lightBlue, 16);
+		}
+}
+
+.overlay {
+	position: absolute;
+	bottom: -26.5px;
+	z-index: 5;
+}
+
+.owl-wrapper img {
+	@include boradius;
 }
 
 .owl-carousel {
@@ -188,8 +273,12 @@ article {
 }
 
 #pageFooter {
+	@include boradius;
+	background-color: $darkBlue;
+	width: 100%;
+	margin-top: $step3 + rem;
 		article {
-			border-radius: 0;
+			border-radius: 0px;
 		}
 }
 

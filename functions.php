@@ -54,7 +54,7 @@ function derijn_custom_post_type() {
 		'description'         => __( 'Posts die boven de pagina in de slider komen', 'derijnkapper' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'thumbnail' ),
-		'taxonomies'          => array( 'category', 'post_tag' ),
+		'taxonomies'          => array(),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
@@ -76,8 +76,59 @@ function derijn_custom_post_type() {
 // Hook into the 'init' action
 add_action( 'init', 'derijn_custom_post_type', 0 );
 
-// Featured images available for post, pages, and slideposts
-add_theme_support('post-thumbnails',array('post', 'page', 'slidepost'));
+// Register Custom Post Type
+function derijn_homeslides() {
+
+	$slidelabels = array(
+		'name'                => _x( 'Homeslides', 'Post Type General Name', 'derijnkapper' ),
+		'singular_name'       => _x( 'Homeslide', 'Post Type Singular Name', 'derijnkapper' ),
+		'menu_name'           => __( 'Homeslide', 'derijnkapper' ),
+		'parent_item_colon'   => __( 'Parent homeslide:', 'derijnkapper' ),
+		'all_items'           => __( 'Alle homeslides', 'derijnkapper' ),
+		'view_item'           => __( 'Bekijk homeslides', 'derijnkapper' ),
+		'add_new_item'        => __( 'Homeslide toevoegen', 'derijnkapper' ),
+		'add_new'             => __( 'Nieuwe homeslide', 'derijnkapper' ),
+		'edit_item'           => __( 'Homeslide bewerken', 'derijnkapper' ),
+		'update_item'         => __( 'Update homeslide', 'derijnkapper' ),
+		'search_items'        => __( 'Homeslide zoeken', 'derijnkapper' ),
+		'not_found'           => __( 'Geen homeslides gevonden', 'derijnkapper' ),
+		'not_found_in_trash'  => __( 'Geen homeslides in prullenbak', 'derijnkapper' ),
+	);
+	$slideargs = array(
+		'label'               => __( 'homeslide', 'derijnkapper' ),
+		'description'         => __( 'Posts op de voorpagina in de slider komen', 'derijnkapper' ),
+		'labels'              => $slidelabels,
+		'supports'            => array( 'title', 'editor', 'thumbnail' ),
+		'taxonomies'          => array(),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		'menu_icon'           => THEMEPATH . '/images/slider-icon.png',
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'homeslide', $slideargs );
+
+}
+
+// Hook into the 'init' action
+add_action( 'init', 'derijn_homeslides', 0 );
+
+// Setting the read more link to the post page
+function new_excerpt_more( $more ) {
+	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">[Lees meer ...]</a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
+
+// Featured images available for post, pages, homeslides and slideposts
+add_theme_support('post-thumbnails', array('post', 'page', 'slidepost', 'homeslide'));
 
 // Register Navigation Menus
 function derijn_navigation_menus() {

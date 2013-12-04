@@ -1,2 +1,5 @@
 .row {
   max-width: 72em; }
+
+ul, ol {
+  list-style-position: inside; }

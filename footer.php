@@ -1,4 +1,5 @@
-<section class="">
+		<section class="large-12 columns">
+		<div class="row">
 			<article class="large-4 columns">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -23,6 +24,7 @@
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				</p>
 			</article>
+			</div>
 		</section>
 	</footer>
 </div><!--  end outerWrap  -->

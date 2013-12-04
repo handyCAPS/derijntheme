@@ -211,26 +211,46 @@ class DeRijn_Link_Widget extends WP_Widget {
             }
         }
 
+        $pageid = '';
+        if (isset($_REQUEST['page_id'])) {
+            $pageid = '/?page_id=';
+        }
+
+        $path = get_home_url() . $pageid . $_REQUEST['page_id'];
+        $current = '';
+        if ($path == $url) {
+            $current = 'current_sidebar_link';
+        }
+
         echo $before_widget;
     //
     // Widget display logic goes here
     //
-        echo "<a href='$url'>$title</a>";
+        echo "<a href='$url' class='sidebar_link $current'>$title</a>";
 
-    echo $after_widget;
+        echo $after_widget;
     }
 
     /**
      * Get all pages and return them as options in a select box
      *
      */
-    private function get_all_pages() {
+    private function get_all_pages($instance) {
+
+       $url = $instance['url'];
+       $home = home_url();
        $allpages = get_pages();
 
-       $alloptions = '';
+       $alloptions = '<option value="' . $home . '">Home</option>' ;
 
        foreach ($allpages as $page) {
-           $option = "<option value='" . get_page_link($page->ID) . "'>" . $page->post_title . "</option>";
+           $selected = '';
+           $page_option = get_page_link($page->ID);
+           if ($url == $page_option) {
+                $selected = 'selected';
+               }
+
+           $option = "<option value='" . get_page_link($page->ID) . "' " . $selected . " >" . $page->post_title . "</option>";
            $alloptions .= $option;
        }
        return $alloptions;
@@ -280,7 +300,7 @@ class DeRijn_Link_Widget extends WP_Widget {
         <input class='widefat' type='text' id='$titleid' name='$titlename' value='$title'><br><br>
         <label for='$urlid'>Pagina: </label>
         <select class='widefat' id='$urlid' name='$urlname'>
-        " . $this->get_all_pages() . "</select>";
+        " . $this->get_all_pages($instance) . "</select>";
 
         echo $link_form;
     }

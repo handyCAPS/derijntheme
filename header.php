@@ -23,7 +23,7 @@
 	  }
    ?></title>
 
-
+  <link rel="shortcut icon" href="<?php echo THEMEPATH; ?>/images/favicon.ico"/>
 
   <link href='http://fonts.googleapis.com/css?family=Original+Surfer|Cherry+Swash|PT+Sans|Roboto+Slab' rel='stylesheet' type='text/css'>
 
@@ -88,14 +88,12 @@
 			wp_nav_menu( $args ); ?>
 
 		<a href="<?php bloginfo('home'); ?>">
-		<h1 class="small-4 columns"><img src="<?php echo THEMEPATH; ?>/images/herenkapper-derijn-alphen.png" alt="Herenkapper de Rijn Alphen a/d Rijn"></h1>
+		<div id="logo" class="small-4 columns"><img src="<?php echo THEMEPATH; ?>/images/de-rijn-kapper-alphen.png" alt="Herenkapper de Rijn Alphen a/d Rijn"></div>
 		</a>
 
-		<section id="attSliderWrapper">
+		<section id="attSliderWrapper" class="small-8 columns">
 
-			<section id="attSlider" class="clearfix">
-
-
+			<section id="attSlider" class="row clearfix">
 
 				<?php 	$args = array('post_type' => 'slidepost');
 
@@ -125,9 +123,9 @@
 
 
 
-			</section>
+			</section><!--  end attSlider  -->
 
-		</section>
+		</section><!--  end attSliderWrapper  -->
 
 	</header>
 

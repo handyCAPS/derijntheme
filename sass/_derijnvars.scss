@@ -56,3 +56,23 @@ $bodyFont: 'PT Sans', serif;
 .row {
 	max-width: 72em;
 }
+
+ul, ol {
+	list-style-position: inside;
+}
+
+@mixin boradius($rad: 3px) {
+	border-radius: $rad;
+}
+
+@mixin bottomshadow($blur: 10px) {
+	-webkit-box-shadow: 0px 10px $blur -10px darken($grey, 36);
+	-moz-box-shadow: 0px 10px $blur -10px darken($grey, 36);
+	box-shadow: 0px 10px $blur -10px darken($grey, 36);
+}
+
+@mixin noshadow {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
