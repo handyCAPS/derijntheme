@@ -89,7 +89,7 @@ header {
 		}
 		nav {
 			min-width: 50%;
-			margin: 0 auto;
+			margin: 0 auto $step2 + rem;
 			overflow: hidden;
 				ul {
 					overflow: hidden;
@@ -132,10 +132,10 @@ header {
 }
 
 #attSliderWrapper {
-	left: 11.6px;
-	margin-top: $step2 + em;
+	// left: 11.6px;
+	// margin-top: $step2 + em;
 	float: right;
-	width: 66%;
+	// width: 66%;
 	background-color: $darkBlue;
 	@include boradius;
 	@include bottomshadow;

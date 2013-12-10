@@ -121,6 +121,9 @@ function derijn_homeslides() {
 // Hook into the 'init' action
 add_action( 'init', 'derijn_homeslides', 0 );
 
+// Cropping all images for Homeslides
+add_image_size('homeslide_thumbnail', 1000, 700, true );
+
 // Setting the read more link to the post page
 function new_excerpt_more( $more ) {
 	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">[Lees meer ...]</a>';

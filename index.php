@@ -13,7 +13,7 @@
 						<div class="image_wrap">
 						<?php
 						if (has_post_thumbnail()) :
-							the_post_thumbnail();
+							the_post_thumbnail('homeslide_thumbnail');
 						else :
 						 ?>
 							<img src="<?php echo THEMEPATH; ?>/images/image.jpeg">

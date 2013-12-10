@@ -38,7 +38,7 @@
 <div id="outerWrap" class="">
 
 	<header class="row clearfix">
-
+		<div id='navWrap' class="row">
 		<?php    /**
 			*
 			* Displays a navigation menu
@@ -57,7 +57,7 @@
 
 				'container_class' => 'menu-container',
 
-				'container_id' => '',
+				'container_id' => 'navTop',
 
 				'menu_class' => 'menu',
 
@@ -86,14 +86,21 @@
 
 
 			wp_nav_menu( $args ); ?>
+			</div><!--  end navWrap  -->
+		<!-- <a href="<?php bloginfo('home'); ?>">
+		<div id="logo" class="large-8 columns"><img src="<?php echo THEMEPATH; ?>/images/de-rijn-kapper-alphen.png" alt="Herenkapper de Rijn Alphen a/d Rijn"></div>
+		</a> -->
+		<div id='headerWrap' class="row">
+		<section id='welcomeWrap' class='large-8 columns'>
+			<article>
+			<h1>Herenkapper De Rijn</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, asperiores, pariatur autem at dolorem vitae consequuntur vel officia consectetur omnis nesciunt perferendis praesentium repudiandae sed recusandae. Velit, dolorum quos dolor.</p>
+			</article>	
+		</section><!--  end welcomeWrap  -->
 
-		<a href="<?php bloginfo('home'); ?>">
-		<div id="logo" class="small-4 columns"><img src="<?php echo THEMEPATH; ?>/images/de-rijn-kapper-alphen.png" alt="Herenkapper de Rijn Alphen a/d Rijn"></div>
-		</a>
+		<section id="attSliderWrapper" class="large-4 columns">
 
-		<section id="attSliderWrapper" class="small-8 columns">
-
-			<section id="attSlider" class="row clearfix">
+			<section id="attSlider" class="clearfix">
 
 				<?php 	$args = array('post_type' => 'slidepost');
 
@@ -126,7 +133,7 @@
 			</section><!--  end attSlider  -->
 
 		</section><!--  end attSliderWrapper  -->
-
+		</div><!--  end headerWrap  -->
 	</header>
 
 	<div id="contentWrap" class="row">
