@@ -67,11 +67,6 @@ article {
 		}
 }
 
-
-.row {
-	max-width: 72em;
-}
-
 #outerWrap {
 	overflow: hidden;
 	padding: 0 $step1 + rem $step2 + rem;
@@ -79,10 +74,10 @@ article {
 
 header {
 	padding: $step2 + em;
-	width: 100%;
+	// width: 100%;
 		#logo {
 			// max-width: 50%;
-			margin-top: $step2 + rem;
+			// margin-top: $step2 + rem;
 				img {
 					width: 100%;
 				}
@@ -134,26 +129,22 @@ header {
 #attSliderWrapper {
 	// left: 11.6px;
 	// margin-top: $step2 + em;
-	float: right;
+	// float: right;
 	// width: 66%;
-	background-color: $darkBlue;
+	// background-color: $darkBlue;
 	@include boradius;
-	@include bottomshadow;
 		article {
-			@include noshadow;
 		}
 		div.image_wrap {
 			width: 25%;
 			float: left;
 			display: inline;
 			margin: 0 $step1 + rem $step-1 + rem 0;
-			position: relative;
 		}
 		h2 {
 			margin-bottom: 0;
 			color: $white;
 			text-shadow: 1.6px 2.2px 0px $black;
-			position: relative;
 		}
 }
 

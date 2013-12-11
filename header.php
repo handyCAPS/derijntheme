@@ -35,67 +35,51 @@
 
 <body>
 
-<div id="outerWrap" class="">
+<div id="outerWrap" class="row">
 
 	<header class="row clearfix">
 		<div id='navWrap' class="row">
-		<?php    /**
+			<a href="<?php bloginfo('home'); ?>">
+			<div id="logo" class="small-3 columns">
+				<img src="<?php echo THEMEPATH; ?>/images/de-rijn-kapper-alphen.png" alt="Herenkapper de Rijn Alphen a/d Rijn">
+			</div><!--  end logo  -->
+			</a>
+			<?php    /**
 			*
 			* Displays a navigation menu
 			*
 			* @param array $args Arguments
 			*
 			*/
-
 			$args = array(
-
-				'theme_location' => 'header_menu',
-
-				'menu' => '',
-
-				'container' => 'nav',
-
-				'container_class' => 'menu-container',
-
-				'container_id' => 'navTop',
-
-				'menu_class' => 'menu',
-
-				'menu_id' => '',
-
-				'echo' => true,
-
-				'fallback_cb' => 'wp_page_menu',
-
-				'before' => '',
-
-				'after' => '',
-
-				'link_before' => '',
-
-				'link_after' => '',
-
-				'items_wrap' => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
-
-				'depth' => 0,
-
-				'walker' => ''
-
+				'theme_location' 	=> 'header_menu',
+				'menu' 				=> '',
+				'container' 		=> 'nav',
+				'container_class' 	=> 'menu-container small-9 ',
+				'container_id' 		=> 'navTop',
+				'menu_class' 		=> 'menu',
+				'menu_id' 			=> '',
+				'echo' 				=> true,
+				'fallback_cb' 		=> 'wp_page_menu',
+				'before' 			=> '',
+				'after' 			=> '',
+				'link_before' 		=> '',
+				'link_after' 		=> '',
+				'items_wrap' 		=> '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
+				'depth' 			=> 0,
+				'walker' 			=> ''
 			);
 
-
-
 			wp_nav_menu( $args ); ?>
-			</div><!--  end navWrap  -->
-		<!-- <a href="<?php bloginfo('home'); ?>">
-		<div id="logo" class="large-8 columns"><img src="<?php echo THEMEPATH; ?>/images/de-rijn-kapper-alphen.png" alt="Herenkapper de Rijn Alphen a/d Rijn"></div>
-		</a> -->
+
+		</div><!--  end navWrap  -->
+
 		<div id='headerWrap' class="row">
 		<section id='welcomeWrap' class='large-8 columns'>
 			<article>
 			<h1>Herenkapper De Rijn</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, asperiores, pariatur autem at dolorem vitae consequuntur vel officia consectetur omnis nesciunt perferendis praesentium repudiandae sed recusandae. Velit, dolorum quos dolor.</p>
-			</article>	
+			</article>
 		</section><!--  end welcomeWrap  -->
 
 		<section id="attSliderWrapper" class="large-4 columns">
